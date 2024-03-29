@@ -612,7 +612,6 @@ textarea::placeholder {
 
 .footer-link-flex {
     display: flex;
-    justify-content: space-between;
 }
 
 .white {
@@ -634,6 +633,10 @@ textarea::placeholder {
     padding: 0 0 80px;
 }
 
+.footer-contect-item:nth-of-type(n+2) {
+    margin: 0 0 0 33px;
+}
+
 .footer-link {
     text-decoration: none;
     display: flex;
@@ -642,6 +645,8 @@ textarea::placeholder {
 
 .footer-link-img {
     fill:#FFF9FC;
+    width: 35px;
+    height: 24px;
 }
 
 .footer-link:hover .footer-link-img, 
