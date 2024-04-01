@@ -564,7 +564,9 @@ body {
     justify-content: space-between;
 }
 
-.input-label {
+.input-label,
+.radio-label,
+.form-like-legend {
     display: block;
     color: #FFFFFF;
     font-family: 'Lato';
@@ -572,6 +574,12 @@ body {
     font-weight: 400;
     line-height: 22px;
     margin: 35px 0 15px;
+}
+
+.flex-like {
+    display: flex;
+    margin: 0 0 0 17px;
+    align-items: flex-end;
 }
 
 input {
@@ -604,10 +612,60 @@ textarea {
     font-weight: 300;
     line-height: 29px;
     color: #FFFFFF;
+    resize: none;
 }
 
 textarea::placeholder {
     color:#BDBDBD
+}
+
+[type="email"]:hover,
+[type="text"]:hover,
+[type="tel"]:hover,
+textarea:hover {
+    border-bottom: 1px solid #829DB6;
+}
+
+[type="email"]:focus,
+[type="text"]:focus,
+[type="tel"]:focus,
+textarea:focus {
+    outline: 1px solid;
+}
+
+[type="radio"] {
+    display: none;
+}
+
+.radio-label {
+    position: relative;
+    margin: 0;
+}
+
+.radio-label:nth-of-type(n+2) {
+    margin: 0 0 0 55px;
+}
+
+.radio-label::before {
+    position: absolute;
+    content: '';
+    width: 11px;
+    height: 11px;
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    left: -19px;
+    bottom: 3px;
+}
+
+[type="radio"]:checked+.radio-label::before {
+    background-color: #8F9CCB;
+}
+
+
+.form-like-wrp {
+    width: 255px;
+    display: flex;
+    align-content: space-between;
 }
 
 .footer-link-flex {
@@ -696,6 +754,22 @@ textarea::placeholder {
     line-height: 19px;
 }
 
+.popup-wrp {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-clouse {
+    display: none;
+}
+
 .popup {
     width: 733px;
     min-height: 636px;
@@ -707,8 +781,29 @@ textarea::placeholder {
 
 .popup-cross {
     position: absolute;
+    width: 30px;
+    height: 28px;
     top: 19px;
     right: 20px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+.popup-cross-icon {
+    width: 30px;
+    height: 28px;
+    fill:#FFFFFF;
+}
+
+.popup-cross:hover,
+.popup-cross:focus {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.popup-cross:active .popup-cross-icon{
+    fill:#4592c9;
 }
 
 .popup-sub-title {

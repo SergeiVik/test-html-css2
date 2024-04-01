@@ -145,7 +145,7 @@
             <h2 class="section-title">Отзывы</h2>
             <div class="review-text-wrp">
                 <p class="section-sub-title">Ваши благодарности</p>
-                <button class="button review-button" type="button">Оставить отзыв</button>
+                <button class="button review-button" type="button" id="letReviewBtn">Оставить отзыв</button>
             </div>
             <ul>
                 <li class="review-item">
@@ -257,11 +257,11 @@
                             <div class="form-row-wrp">
                                 <label>
                                     <span class="input-label">Имя</span>
-                                    <input type="text" placeholder="Иван">
+                                    <input type="text" placeholder="Иван" required>
                                 </label>
                                 <label>
                                     <span class="input-label">Телефон</span>
-                                    <input type="tel" placeholder="+7-999-999-99-99">
+                                    <input type="tel" placeholder="+7-999-999-99-99" required>
                                 </label>
                             </div>
                             <label>
@@ -279,42 +279,49 @@
                 <p class="footer-text">Разработано: BuhOne</p>
         </div>
     </footer>
-    <div class="popup">
-        <svg class="popup-cross" width="30" height="28" viewBox="0 0 30 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0.664338 28L15 14.619L29.3357 28L30 27.3814L15.6633 13.9998L30 0.617771L29.3357 0L15 13.3806L0.664338 0L0 0.617771L14.3367 13.9998L0 27.3814L0.664338 28Z" fill="white"/>
-        </svg>
-        <h2 class="popup-sub-title">Оставить отзыв</h2>
-        <form action="#">
-            <div class="form-row-wrp">
-                <label>
-                    <span class="input-label">Имя</span>
-                    <input type="text" placeholder="Иван">
-                </label>
-                <label>
-                    <span class="input-label">Фамилия</span>
-                    <input type="text" placeholder="Иванов">
-                </label>
-            </div>
-            <div class="form-row-wrp">
-                <label>
-                    <span class="input-label">Email</span>
-                    <input type="email" placeholder="Email">
-                </label>
-                <fieldset>
-                    <legend>Ваше сообщение</legend>
-                    <input type="radio" id="like-yes" name="like" value="yes">
-                    <label for="like-yes">Да</label>
+    <div class="popup-wrp popup-clouse" id="popupWrp"><!-- popup-clouse -->
+        <div class="popup">
+            <button type="button" class="popup-cross" id="popupClouseBtn">
+                <svg class="popup-cross-icon" width="30" height="28" viewBox="0 0 30 28" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.664338 28L15 14.619L29.3357 28L30 27.3814L15.6633 13.9998L30 0.617771L29.3357 0L15 13.3806L0.664338 0L0 0.617771L14.3367 13.9998L0 27.3814L0.664338 28Z"/>
+                </svg>
+            </button>
+            <h2 class="popup-sub-title">Оставить отзыв</h2>
+            <form action="#">
+                <div class="form-row-wrp">
+                    <label>
+                        <span class="input-label">Имя</span>
+                        <input type="text" placeholder="Иван">
+                    </label>
+                    <label>
+                        <span class="input-label">Фамилия</span>
+                        <input type="text" placeholder="Иванов">
+                    </label>
+                </div>
+                <div class="form-row-wrp">
+                    <label>
+                        <span class="input-label">Email</span>
+                        <input type="email" placeholder="Email">
+                    </label>
+                    <fieldset class="form-like-wrp">
+                        <legend class="form-like-legend">Ваше сообщение</legend>
+                        <div class="flex-like">
+                            <input type="radio" id="like-yes" name="like" value="yes">
+                            <label class="radio-label" for="like-yes">Да</label>
 
-                    <input type="radio" id="like-no" name="like" value="no">
-                    <label for="like-no">Нет</label>
-                </fieldset>
-            </div>
-            <label>
-                <span class="input-label">Отзыв</span>
-                <textarea placeholder="Отзыв"></textarea>
-            </label>
-            <button class="button sub-button" type="submit">Отправить сообщение</button>
-        </form>
+                            <input type="radio" id="like-no" name="like" value="no">
+                            <label class="radio-label" for="like-no">Нет</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <label>
+                    <span class="input-label">Отзыв</span>
+                    <textarea placeholder="Отзыв"></textarea>
+                </label>
+                <button class="button sub-button" type="submit">Отправить сообщение</button>
+            </form>
+        </div>
     </div>
+    <script src="./JS/script.js"></script>
 </body>
 </html>
